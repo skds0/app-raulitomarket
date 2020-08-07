@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const clienteController = require('../controllers/clienteController');
+const usuarioController = require('../controllers/usuariosController');
 
 module.exports = function(){
     /*
@@ -25,6 +26,15 @@ module.exports = function(){
 
    // obteniendo un solo cliente
    router.get('/mostrar-cliente/:miId', clienteController.mostrarUnCliente);
+
+   // modificar la informacion
+   router.put('/actualizar/:miId', clienteController.actualizarCliente);
+
+   // eliminar la informacion
+   router.delete('/borrar/:miId', clienteController.borrarCliente);
+
+   // nuevo usuario
+   router.post('/usuario', usuarioController.nuevoUsuario);
 
 
 
