@@ -17,7 +17,14 @@ module.exports = function(){
         res.send('aqui estan mis contactos');
     });
     */
+    
    router.post('/clientes', clienteController.nuevoCliente);
+
+   // obteniendo informacion de la DB
+   router.get('/mostrar-clientes',clienteController.obtenerClientes);
+
+   // obteniendo un solo cliente
+   router.get('/mostrar-cliente/:miId', clienteController.mostrarUnCliente);
 
 
 
